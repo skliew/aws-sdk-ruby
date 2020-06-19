@@ -570,7 +570,7 @@ module AWS
         context 'reading encrypted data with tampered metadata' do
           before(:each) do
             cipher = OpenSSL::Cipher.new('AES-128-ECB').encrypt
-            cipher.key = "I AM NOT A KEY I WANT TO USE!"
+            cipher.key = "I AM NOT A KEY I"
             client.stub(:head_object).and_return(sym_head_response)
             response.data[:data] = cipher.update('HELLO') + cipher.final
             client.stub(:get_object).and_return(response)

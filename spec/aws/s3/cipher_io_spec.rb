@@ -20,7 +20,7 @@ module AWS
 
     describe CipherIO do
       let(:key)          { "I really need a better key name." }
-      let(:iv)           { "Initialization vectors should be unique." }
+      let(:iv)           { "Initialization v" }
       let(:cipher)       { OpenSSL::Cipher.new('AES-256-CBC') }
       let(:stream)       { StringIO.new("HELLO WORLD!") }
       let(:proxy_stream) { ProxyStream.new(StringIO.new("HELLO WORLD!")) }
